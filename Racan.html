@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Racan - AI Pre-register</title>
+    <link
+      rel="shortcut icon"
+      href="https://i.postimg.cc/50B939gH/Logo.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="Racan.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", serif;
+        cursor: url("https://i.postimg.cc/k5xLYT64/icons8-sparkling-24.png"),
+          auto;
+      }
+
+      body {
+        background-color: #f5f5f5;
+        color: #333;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #1a2352;
+        padding: 15px 5%;
+        position: relative;
+        transition: background-color 0.3s ease;
+      }
+
+      .logo img {
+        height: 35px;
+      }
+
+      .join-now-btn {
+        background-color: #1a2352;
+        color: white;
+        border: 2.8px solid white;
+        border-radius: 20px;
+        padding: 8px 20px;
+        font-weight: 750;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .join-now-btn:hover {
+        background-color: white;
+        color: #1a2352;
+        transform: scale(1.05);
+      }
+
+      .hero-container {
+        background-color: #d7cdff;
+        padding: 30px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s forwards;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .hero-text {
+        flex: 1;
+        min-width: 300px;
+        padding-right: 20px;
+      }
+
+      .hero-text h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        color: #1a2352;
+      }
+
+      .signup-btn {
+        display: flex;
+        align-items: center;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 60px;
+        padding: 8px 25px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+
+      .signup-btn:hover {
+        background-color: #444;
+        transform: scale(1.05);
+      }
+
+      .signup-btn img {
+        height: 30px;
+        margin-left: 10px;
+      }
+
+      .hero-image {
+        flex: 1;
+        min-width: 300px;
+        text-align: center;
+      }
+
+      .hero-image img {
+        max-width: 100%;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+      }
+
+      .hero-image img:hover {
+        transform: scale(1.05);
+      }
+
+      .features-title {
+        padding: 20px 5%;
+        background-color: #3f51b5;
+        color: white;
+        font-size: 2rem;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s forwards 0.5s;
+      }
+
+      .features {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 20px 5%;
+        background: linear-gradient(to bottom, #3f51b5, #5c6bc0);
+      }
+
+      .feature-card {
+        flex: 1 0 30%;
+        min-width: 250px;
+        text-align: center;
+        margin-bottom: 20px;
+        background-color: rgba(255, 255, 255, 0.275);
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        transform: translateY(20px);
+        opacity: 0;
+        animation: fadeInUp 1s forwards;
+      }
+
+      .feature-card:nth-child(2) {
+        animation-delay: 0.7s;
+      }
+
+      .feature-card:nth-child(3) {
+        animation-delay: 0.9s;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .feature-img {
+        height: 360px;
+        overflow: hidden;
+      }
+
+      .feature-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .feature-img img:hover {
+        transform: scale(1.1);
+      }
+
+      .feature-title {
+        padding: 15px;
+        font-weight: bold;
+        color: #ffffff;
+      }
+
+      .additional-features {
+        background: linear-gradient(to bottom, #5c6bc0, #7986cb);
+        padding: 40px 5%;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s forwards 1.2s;
+      }
+
+      .additional-features-content {
+        flex: 1;
+        max-width: 50%;
+      }
+
+      .additional-features ul {
+        list-style-type: none;
+        margin-bottom: 0;
+      }
+
+      .additional-features li {
+        margin-bottom: 20px;
+        font-weight: 500;
+        font-size: 1rem;
+      }
+
+      .additional-img {
+        flex: 1;
+        text-align: right;
+      }
+
+      .additional-img img {
+        max-width: 80%;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+      }
+
+      .additional-img img:hover {
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 768px) {
+        .additional-features {
+          flex-direction: column;
+        }
+
+        .additional-features-content {
+          max-width: 100%;
+          margin-bottom: 40px;
+        }
+
+        .additional-img img {
+          max-width: 100%;
+          margin-top: 0;
+        }
+      }
+
+      .magazine-banner {
+        background-color: #369371;
+        padding: 0;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s forwards 1.5s;
+      }
+
+      .magazine-banner img {
+        max-width: 80%;
+        vertical-align: middle;
+      }
+
+      .how-it-works {
+        background-color: #7986cb;
+        padding: 20px 5%;
+        color: white;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s forwards 1.8s;
+      }
+
+      .how-it-works h2 {
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+      }
+
+      .how-it-works-steps {
+        text-align: left;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .step {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        opacity: 0;
+        transform: translateX(-20px);
+        animation: fadeInLeft 1s forwards;
+      }
+
+      .step:nth-child(2) {
+        animation-delay: 0.3s;
+      }
+
+      .step:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+
+      .step:nth-child(4) {
+        animation-delay: 0.9s;
+      }
+
+      @keyframes fadeInLeft {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .step-divider {
+        border: none;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.3);
+        margin: 10px 0;
+      }
+
+      .team-section {
+        background-color: #7986cb;
+        padding: 20px 5%;
+        color: white;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s forwards 2.1s;
+      }
+
+      .team-title {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+      }
+
+      .team-members {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 58px;
+      }
+
+      .team-member {
+        flex: 1;
+        max-width: 150px;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s forwards;
+      }
+
+      .team-member:nth-child(2) {
+        animation-delay: 0.3s;
+      }
+
+      .team-member:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+
+      .team-member-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: 0 auto 15px;
+        overflow: hidden;
+        background-color: #f5f5f5;
+        transition: transform 0.3s ease;
+      }
+
+      .team-member-img:hover {
+        transform: scale(1.1);
+      }
+
+      .team-member-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .team-member-name {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 5px 10px;
+        display: inline-block;
+        margin-bottom: 10px;
+        margin-left: -10px;
+      }
+
+      .team-member-role {
+        font-weight: bold;
+      }
+
+      /* Pre-register section */
+      .pre-register {
+        background-color: #7986cb;
+        padding: 30px 5%;
+        text-align: center;
+        color: white;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s forwards 2.4s;
+      }
+
+      .pre-register p {
+        max-width: 600px;
+        margin: 0 auto 20px;
+        font-weight: 500;
+      }
+
+      .register-btn {
+        background-color: #a5d6a7;
+        color: #333;
+        border: none;
+        border-radius: 20px;
+        padding: 10px 30px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-block;
+      }
+
+      .register-btn:hover {
+        background-color: #81c784;
+        transform: scale(1.05);
+      }
+
+      /* Footer */
+      .footer {
+        background-color: #000;
+        color: white;
+        padding: 30px 5%;
+      }
+
+      .footer-logo {
+        margin-bottom: 20px;
+      }
+
+      .footer-logo img {
+        height: 35px;
+      }
+
+      .contact-info {
+        margin-bottom: 20px;
+      }
+
+      .social-media {
+        margin-bottom: 20px;
+      }
+
+      .social-media h3 {
+        margin-bottom: 10px;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-icon {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+
+      .social-icon:hover {
+        transform: scale(1.1);
+      }
+
+      .social-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        cursor: pointer;
+      }
+
+      .footer-links {
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .footer-link {
+        color: white;
+        text-decoration: none;
+      }
+
+      .footer-link:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .hero {
+          flex-direction: column;
+        }
+
+        .hero-text {
+          padding-right: 0;
+          margin-bottom: 20px;
+        }
+
+        .features {
+          justify-content: center;
+        }
+
+        .feature-card {
+          flex: 0 0 100%;
+          max-width: 400px;
+        }
+
+        .team-members {
+          gap: 18px;
+        }
+
+        .team-member {
+          flex: 0 0 100px;
+          gap: 60px;
+          margin-bottom: 20px;
+        }
+
+        .team-member-name {
+          margin-bottom: 20px;
+        }
+      }
+
+      /* Go to Top Button */
+      .go-top-btn {
+        position: fixed;
+        bottom: 50px;
+        right: 20px;
+        background-color: #93f400;
+        color: rgb(3, 0, 92);
+        border: none;
+        border-radius: 0;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        font-size: large;
+        font-weight: bold;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        cursor: pointer;
+      }
+
+      .go-top-btn.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .go-top-btn::after {
+        content: "↑";
+        font-size: 24px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="https://i.postimg.cc/CMnkxnGs/image-1.png" alt="Racan Logo" />
+      </div>
+      <a href="https://q65zy9-5000.csb.app/Subscribe" class="join-now-btn">
+        Subscribe
+      </a>
+    </nav>
+
+    <section class="hero-container">
+      <div class="hero">
+        <div class="hero-text">
+          <h1>Racan a full-fledged AI fashion ecosystem!</h1>
+          <button class="signup-btn">
+            register with
+            <img
+              src="https://i.postimg.cc/Hx47MR20/icons8-google-48.png"
+              alt="Google Icon"
+            />
+          </button>
+        </div>
+        <div class="hero-image">
+          <img
+            src="https://i.postimg.cc/NMkMKY0Y/Mac-Book-Air-2022.png"
+            alt="Fashion Website Preview"
+          />
+        </div>
+      </div>
+    </section>
+
+    <div class="features-title">Racan Features</div>
+    <section class="features">
+      <div class="feature-card">
+        <div class="feature-img">
+          <img
+            src="https://i.postimg.cc/yxbBNqxY/Virtual-tryon.png"
+            alt="Virtual Try-On"
+          />
+        </div>
+        <div class="feature-title">Virtual Try-On</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-img">
+          <img
+            src="https://i.postimg.cc/VvypZYJt/ddf.png"
+            alt="AI-Powered Styling"
+          />
+        </div>
+        <div class="feature-title">AI-Powered Styling</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-img">
+          <img
+            src="https://i.postimg.cc/xdDmdhNR/e.png"
+            alt="Smart Wardrobe Assistant"
+          />
+        </div>
+        <div class="feature-title">Smart Wardrobe Assistant</div>
+      </div>
+    </section>
+
+    <section class="additional-features">
+      <ul>
+        <li>
+          Multi-Language Support: Get fashion advice in your preferred language.
+        </li>
+        <li>
+          Exclusive Fashion Challenges: Join styling contests and showcase your
+          creativity.
+        </li>
+        <li>
+          Seamless Shopping Experience: Browse and shop from top fashion brands.
+        </li>
+        <li>
+          Traditional Wear based on their Region & Traditional Wear based on
+          their Region
+        </li>
+        <li>
+          Live Fashion Webinars & Expert Styling Tips , Designer and Model can
+          Post there work.
+        </li>
+      </ul>
+      <div class="additional-img">
+        <img
+          src="https://i.postimg.cc/gJy3Kfgk/image-2.png"
+          alt="AI Fashion App"
+        />
+      </div>
+    </section>
+
+    <section class="magazine-banner">
+      <img
+        src="https://i.postimg.cc/FKjBfbft/image.png"
+        alt="Fashion Magazine Banner"
+      />
+    </section>
+
+    <section class="how-it-works">
+      <h2>How It Works?</h2>
+      <div class="how-it-works-steps">
+        <div class="step">
+          <p>
+            Upload your photo & details - Let AI analyze your fashion profile.
+          </p>
+        </div>
+        <hr class="step-divider" />
+        <div class="step">
+          <p>Discover personalized outfits - Get AI-curated recommendations.</p>
+        </div>
+        <hr class="step-divider" />
+        <div class="step">
+          <p>
+            Try it on virtually - See how the outfit looks before purchasing.
+          </p>
+        </div>
+        <hr class="step-divider" />
+        <div class="step">
+          <p>
+            Shop or share your style - Buy your look or showcase your fashion
+            online.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="team-section">
+      <h2 class="team-title">our team:</h2>
+      <div class="team-members">
+        <div class="team-member">
+          <div class="team-member-img">
+            <img
+              src="https://i.postimg.cc/Hxh5hDFw/1740918461489.jpg"
+              alt="Team Member"
+            />
+          </div>
+          <div class="team-member-name">Kesari Brahamrishendra</div>
+          <div class="team-member-role">Founder</div>
+        </div>
+        <div class="team-member">
+          <div class="team-member-img">
+            <img
+              src="https://via.placeholder.com/100/333333?text=SL"
+              alt="Team Member"
+            />
+          </div>
+          <div class="team-member-name">Ganji Lokesh</div>
+          <div class="team-member-role">Co-founder</div>
+        </div>
+        <div class="team-member">
+          <div class="team-member-img">
+            <img
+              src="https://i.postimg.cc/C1LdPJHg/Whats-App-Image-2025-03-08-at-15-53-37-b38eef7f.jpg"
+              alt="Team Member"
+            />
+          </div>
+          <div class="team-member-name">vaishnavi rajesh</div>
+          <div class="team-member-role">partner</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pre-register">
+      <p>
+        Pre-register now and get exclusive early access, special discounts, and
+        a chance to become a featured model!
+      </p>
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSe35ho0mOzNaf_xvf6YJJxFxu7l0sg6wA5V68YcCuSG6CAI8A/viewform"
+      >
+        <button class="register-btn">Your FeedBack</button>
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-logo">
+        <img src="https://i.postimg.cc/CMnkxnGs/image-1.png" alt="Racan Logo" />
+      </div>
+      <div class="contact-info">
+        <h3>Contact Us:</h3>
+      </div>
+      <div class="social-media">
+        <h3>Follow Us on Social Media:</h3>
+        <div class="social-icons">
+          <a href="#" class="social-icon"
+            ><img
+              src="https://i.postimg.cc/FsWk02tm/icons8-linkedin-144.png"
+              alt="Linkedin"
+          /></a>
+          <a
+            href="https://bsky.app/profile/rucanai.bsky.social"
+            class="social-icon"
+            ><img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Bluesky_Logo.svg/2319px-Bluesky_Logo.svg.png"
+              alt="Butterfly"
+          /></a>
+          <a href="https://x.com/sigasis_" class="social-icon" id="twitter-icon"
+            ><img
+              src="https://i.postimg.cc/2S2n6VGk/icons8-twitterx-50.png"
+              alt="Twitter"
+          /></a>
+          <a
+            href="https://www.instagram.com/racan.ai?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            class="social-icon"
+            id="instagram-icon"
+            ><img
+              src="https://i.postimg.cc/MpqsCJcR/icons8-instagram-48.png"
+              alt="Instagram"
+          /></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="#" class="footer-link">About Us</a>
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Terms & Conditions</a>
+      </div>
+    </footer>
+
+    <!-- Go to Top Button -->
+    <button class="go-top-btn" id="goTopBtn"></button>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const featureCards = document.querySelectorAll(".feature-card");
+        featureCards.forEach((card) => {
+          card.addEventListener("mouseover", function () {
+            this.style.transform = "translateY(-10px)";
+            this.style.boxShadow = "0 15px 30px rgba(0,0,0,0.2)";
+            this.style.transition = "all 0.3s ease";
+          });
+
+          card.addEventListener("mouseout", function () {
+            this.style.transform = "translateY(0)";
+            this.style.boxShadow = "0 5px 15px rgba(0,0,0,0.1)";
+          });
+        });
+
+        // Add smooth scrolling for in-page navigation links only
+        const navLinks = document.querySelectorAll("nav a");
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            const targetId = this.getAttribute("href");
+            // Only intercept in-page links starting with "#"
+            if (targetId.startsWith("#")) {
+              e.preventDefault();
+              const targetElement = document.querySelector(targetId);
+              if (targetElement) {
+                window.scrollTo({
+                  top: targetElement.offsetTop - 70,
+                  behavior: "smooth",
+                });
+              }
+            }
+          });
+        });
+
+        const buttons = document.querySelectorAll(
+          "button, .join-now-btn, .register-btn"
+        );
+        buttons.forEach((button) => {
+          button.addEventListener("mouseover", function () {
+            this.style.transform = "scale(1.05)";
+            this.style.transition = "all 0.2s ease";
+          });
+
+          button.addEventListener("mouseout", function () {
+            this.style.transform = "scale(1)";
+          });
+        });
+
+        // Go to Top Button
+        const goTopBtn = document.getElementById("goTopBtn");
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 200) {
+            goTopBtn.classList.add("show");
+          } else {
+            goTopBtn.classList.remove("show");
+          }
+        });
+
+        goTopBtn.addEventListener("click", function () {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
