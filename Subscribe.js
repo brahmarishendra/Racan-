@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Thank you for subscribing Racan Update You Soon !");
       emailInput.value = "";
       // Redirect the user back to the specified URL
-      window.location.href = "https://q65zy9-5000.csb.app/";
+      window.location.href = "https://racan.vercel.app/";
     } catch (error) {
       console.error("Error saving subscription:", error);
       alert("An error occurred. Please try again later.");
