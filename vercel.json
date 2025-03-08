@@ -1,0 +1,7 @@
+code:
+
+{
+   "rewrites":  [
+       {"source": "/(.*)", "destination": "/"}
+    ]
+}
