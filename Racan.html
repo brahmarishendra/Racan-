@@ -154,7 +154,6 @@
         font-size: 2rem;
         opacity: 0;
         transform: translateY(20px);
-        animation: fadeInUp 1s forwards 0.5s;
       }
 
       .features {
@@ -177,22 +176,8 @@
         margin: 10px;
         cursor: pointer;
         transition: all 0.3s ease;
-        transform: translateY(20px);
+        transform: translateY(40px);
         opacity: 0;
-        animation: fadeInUp 1s forwards;
-      }
-
-      .feature-card:nth-child(2) {
-        animation-delay: 0.7s;
-      }
-
-      .feature-card:nth-child(3) {
-        animation-delay: 0.9s;
-      }
-
-      .feature-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
       }
 
       .feature-img {
@@ -226,7 +211,6 @@
         justify-content: space-between;
         opacity: 0;
         transform: translateY(20px);
-        animation: fadeInUp 1s forwards 1.2s;
       }
 
       .additional-features-content {
@@ -243,6 +227,8 @@
         margin-bottom: 20px;
         font-weight: 500;
         font-size: 1rem;
+        opacity: 0;
+        transform: translateX(-20px);
       }
 
       .additional-img {
@@ -258,7 +244,7 @@
       }
 
       .additional-img img:hover {
-        transform: scale(1.05);
+        transform: scale(1.05) rotate(3deg);
       }
 
       @media (max-width: 768px) {
@@ -283,12 +269,16 @@
         text-align: center;
         opacity: 0;
         transform: translateY(20px);
-        animation: fadeInUp 1s forwards 1.5s;
       }
 
       .magazine-banner img {
         max-width: 80%;
         vertical-align: middle;
+        transition: transform 0.5s ease;
+      }
+
+      .magazine-banner:hover img {
+        transform: translateY(-5px) scale(1.01);
       }
 
       .how-it-works {
@@ -298,7 +288,6 @@
         text-align: center;
         opacity: 0;
         transform: translateY(20px);
-        animation: fadeInUp 1s forwards 1.8s;
       }
 
       .how-it-works h2 {
@@ -318,26 +307,6 @@
         align-items: center;
         opacity: 0;
         transform: translateX(-20px);
-        animation: fadeInLeft 1s forwards;
-      }
-
-      .step:nth-child(2) {
-        animation-delay: 0.3s;
-      }
-
-      .step:nth-child(3) {
-        animation-delay: 0.6s;
-      }
-
-      .step:nth-child(4) {
-        animation-delay: 0.9s;
-      }
-
-      @keyframes fadeInLeft {
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
       }
 
       .step-divider {
@@ -347,6 +316,13 @@
         margin: 10px 0;
       }
 
+      @keyframes fadeInLeft {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
       .team-section {
         background-color: #7986cb;
         padding: 20px 5%;
@@ -354,7 +330,6 @@
         text-align: center;
         opacity: 0;
         transform: translateY(20px);
-        animation: fadeInUp 1s forwards 2.1s;
       }
 
       .team-title {
@@ -375,15 +350,6 @@
         text-align: center;
         opacity: 0;
         transform: translateY(20px);
-        animation: fadeInUp 1s forwards;
-      }
-
-      .team-member:nth-child(2) {
-        animation-delay: 0.3s;
-      }
-
-      .team-member:nth-child(3) {
-        animation-delay: 0.6s;
       }
 
       .team-member-img {
@@ -397,7 +363,7 @@
       }
 
       .team-member-img:hover {
-        transform: scale(1.1);
+        transform: scale(1.1) rotate(5deg);
       }
 
       .team-member-img img {
@@ -427,7 +393,6 @@
         color: white;
         opacity: 0;
         transform: translateY(20px);
-        animation: fadeInUp 1s forwards 2.4s;
       }
 
       .pre-register p {
@@ -458,6 +423,8 @@
         background-color: #000;
         color: white;
         padding: 30px 5%;
+        opacity: 0;
+        transform: translateY(20px);
       }
 
       .footer-logo {
@@ -496,7 +463,7 @@
       }
 
       .social-icon:hover {
-        transform: scale(1.1);
+        transform: scale(1.1) rotate(10deg);
       }
 
       .social-icon img {
@@ -521,6 +488,16 @@
 
       .footer-link:hover {
         text-decoration: underline;
+      }
+
+      /* 3D animation effects */
+      .animate-3d {
+        transition: transform 0.5s ease;
+        transform-style: preserve-3d;
+      }
+
+      .animate-3d:hover {
+        transform: perspective(1000px) rotateY(5deg) rotateX(5deg);
       }
 
       /* Responsive design */
@@ -555,6 +532,43 @@
 
         .team-member-name {
           margin-bottom: 20px;
+        }
+      }
+
+      /* Animation classes */
+      .fade-in {
+        animation: fadeIn 1s forwards;
+      }
+
+      .fade-in-up {
+        animation: fadeInUp 1s forwards;
+      }
+
+      .fade-in-left {
+        animation: fadeInLeft 1s forwards;
+      }
+
+      .fade-in-right {
+        animation: fadeInRight 1s forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
         }
       }
 
@@ -628,58 +642,62 @@
           <img
             src="https://i.postimg.cc/NMkMKY0Y/Mac-Book-Air-2022.png"
             alt="Fashion Website Preview"
+            class="animate-3d"
           />
         </div>
       </div>
     </section>
 
-    <div class="features-title">Racan Features</div>
+    <div class="features-title scroll-animation">Racan Features</div>
     <section class="features">
-      <div class="feature-card">
+      <div class="feature-card scroll-animation">
         <div class="feature-img">
           <img
             src="https://i.postimg.cc/yxbBNqxY/Virtual-tryon.png"
             alt="Virtual Try-On"
+            class="animate-3d"
           />
         </div>
         <div class="feature-title">Virtual Try-On</div>
       </div>
-      <div class="feature-card">
+      <div class="feature-card scroll-animation">
         <div class="feature-img">
           <img
             src="https://i.postimg.cc/VvypZYJt/ddf.png"
             alt="AI-Powered Styling"
+            class="animate-3d"
           />
         </div>
         <div class="feature-title">AI-Powered Styling</div>
       </div>
-      <div class="feature-card">
+      <div class="feature-card scroll-animation">
         <div class="feature-img">
           <img
             src="https://i.postimg.cc/xdDmdhNR/e.png"
             alt="Smart Wardrobe Assistant"
+            class="animate-3d"
           />
         </div>
         <div class="feature-title">Smart Wardrobe Assistant</div>
       </div>
     </section>
 
-    <section class="additional-features">
+    <section class="additional-features scroll-animation">
       <ul>
-        <li>
+        <li class="scroll-animation">
           Multi-Language Support: Get fashion advice in your preferred language.
         </li>
-        <li>
+        <li class="scroll-animation">
           Exclusive Fashion Challenges: Join styling contests and showcase your
           creativity.
         </li>
-        <li>
+        <li class="scroll-animation">
           Seamless Shopping Experience: Browse and shop from top fashion brands.
         </li>
-        <li>
+        <li class="scroll-animation">
           Traditional Wear based on their Region
         </li>
-        <li>
+        <li class="scroll-animation">
           Live Fashion Webinars & Expert Styling Tips , Designer and Model can
           Post there work.
         </li>
@@ -688,37 +706,39 @@
         <img
           src="https://i.postimg.cc/gJy3Kfgk/image-2.png"
           alt="AI Fashion App"
+          class="animate-3d scroll-animation"
         />
       </div>
     </section>
 
-    <section class="magazine-banner">
+    <section class="magazine-banner scroll-animation">
       <img
         src="https://i.postimg.cc/FKjBfbft/image.png"
         alt="Fashion Magazine Banner"
+        class="animate-3d"
       />
     </section>
 
-    <section class="how-it-works">
+    <section class="how-it-works scroll-animation">
       <h2>How It Works?</h2>
       <div class="how-it-works-steps">
-        <div class="step">
+        <div class="step scroll-animation">
           <p>
             Upload your photo & details - Let AI analyze your fashion profile.
           </p>
         </div>
         <hr class="step-divider" />
-        <div class="step">
+        <div class="step scroll-animation">
           <p>Discover personalized outfits - Get AI-curated recommendations.</p>
         </div>
         <hr class="step-divider" />
-        <div class="step">
+        <div class="step scroll-animation">
           <p>
             Try it on virtually - See how the outfit looks before purchasing.
           </p>
         </div>
         <hr class="step-divider" />
-        <div class="step">
+        <div class="step scroll-animation">
           <p>
             Shop or share your style - Buy your look or showcase your fashion
             online.
@@ -727,10 +747,10 @@
       </div>
     </section>
 
-    <section class="team-section">
+    <section class="team-section scroll-animation">
       <h2 class="team-title">our team:</h2>
       <div class="team-members">
-        <div class="team-member">
+        <div class="team-member scroll-animation">
           <div class="team-member-img">
             <img
               src="https://i.postimg.cc/Hxh5hDFw/1740918461489.jpg"
@@ -740,7 +760,7 @@
           <div class="team-member-name">Kesari Brahamrishendra</div>
           <div class="team-member-role">Founder</div>
         </div>
-        <div class="team-member">
+        <div class="team-member scroll-animation">
           <div class="team-member-img">
             <img
               src="https://i.postimg.cc/pXkFjC7K/Whats-App-Image-2025-03-08-at-23-17-43-05d1786f.jpg"
@@ -750,7 +770,7 @@
           <div class="team-member-name">Ganji Lokesh</div>
           <div class="team-member-role">Co-founder</div>
         </div>
-        <div class="team-member">
+        <div class="team-member scroll-animation">
           <div class="team-member-img">
             <img
               src="https://i.postimg.cc/C1LdPJHg/Whats-App-Image-2025-03-08-at-15-53-37-b38eef7f.jpg"
@@ -763,7 +783,7 @@
       </div>
     </section>
 
-    <section class="pre-register">
+    <section class="pre-register scroll-animation">
       <p>
         Pre-register now and get exclusive early access, special discounts, and
         a chance to become a featured model!
@@ -776,7 +796,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer scroll-animation">
       <div class="footer-logo">
         <img src="https://i.postimg.cc/CMnkxnGs/image-1.png" alt="Racan Logo" />
       </div>
@@ -888,6 +908,78 @@
             behavior: "smooth",
           });
         });
+
+        const scrollAnimations = document.querySelectorAll('.scroll-animation');
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+             if (entry.target.classList.contains('feature-card')) {
+                entry.target.style.animation = 'fadeInUp 0.8s forwards';
+              } else if (entry.target.classList.contains('step')) {
+                entry.target.style.animation = 'fadeInLeft 0.8s forwards';
+              } else if (entry.target.classList.contains('team-member')) {
+                entry.target.style.animation = 'fadeInUp 0.8s forwards';
+              } else if (entry.target.classList.contains('additional-features') || 
+                         entry.target.classList.contains('magazine-banner') ||
+                         entry.target.classList.contains('how-it-works') ||
+                         entry.target.classList.contains('team-section') ||
+                         entry.target.classList.contains('pre-register') ||
+                         entry.target.classList.contains('footer') ||
+                         entry.target.classList.contains('features-title')) {
+                entry.target.style.animation = 'fadeInUp 0.8s forwards';
+              } else if (entry.target.parentNode.classList.contains('additional-features') && 
+                         entry.target.tagName === 'LI') {
+                entry.target.style.animation = 'fadeInLeft 0.8s forwards';
+              
+                const index = Array.from(entry.target.parentNode.children).indexOf(entry.target);
+                entry.target.style.animationDelay = `${index * 0.2}s`;
+              } else if (entry.target.classList.contains('additional-img') || 
+                         entry.target.parentNode.classList.contains('additional-img')) {
+                entry.target.style.animation = 'fadeInRight 0.8s forwards';
+              } else {
+                entry.target.style.animation = 'fadeIn 0.8s forwards';
+              }
+              
+              // Stop observing after animation is applied
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1, 
+          rootMargin: '-50px' 
+        });
+        
+        // Observe all elements with scroll-animation class
+        scrollAnimations.forEach(element => {
+          observer.observe(element);
+        });
+        
+const animateElements = document.querySelectorAll('.animate-3d');
+animateElements.forEach((element) => {
+  element.addEventListener('mousemove', function(e) {
+    const { left, top, width, height } = this.getBoundingClientRect();
+    const x = (e.clientX - left) / width - 0.5;
+    const y = (e.clientY - top) / height - 0.5;
+
+    const rotateX = y * -20;
+    const rotateY = x * 20;
+    
+    // Apply transform
+    this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    this.style.transition = 'transform 0.1s ease';
+    
+    // Add subtle shadow for depth
+    this.style.boxShadow = `${x * 10}px ${y * 10}px 20px rgba(0,0,0,0.15)`;
+  });
+  
+  element.addEventListener('mouseleave', function() {
+    // Reset transform and shadow when mouse leaves
+    this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+    this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+    this.style.transition = 'transform 0.5s ease, box-shadow 0.5s ease';
+  });
+});
       });
     </script>
   </body>
