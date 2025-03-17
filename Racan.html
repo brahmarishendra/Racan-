@@ -328,143 +328,69 @@
           transform: translateX(0);
         }
       }
-/* Team Section Base Styles */
-.team-section {
-  background-color: #7986cb;
-  padding: 40px 5%;
-  color: white;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(20px);
-  overflow-x: hidden;
-}
 
-.team-title {
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
+      .team-section {
+        background-color: #7986cb;
+        padding: 20px 5%;
+        color: white;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20px);
+      }
 
-.team-members {
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap; /* Prevent wrapping */
-  gap: 30px;
-  margin-bottom: 30px;
-  overflow-x: auto; /* Enable horizontal scrolling */
-  padding-bottom: 15px; /* Space for scrollbar */
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-}
+      .team-title {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+      }
 
-.team-member {
-  flex: 0 0 auto; /* Don't grow or shrink */
-  width: 150px; /* Fixed width */
-  text-align: center;
-  opacity: 0;
-  transform: translateY(20px);
-}
+      .team-members {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 58px;
+      }
 
-.team-member-img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin: 0 auto 15px;
-  overflow: hidden;
-  background-color: #f5f5f5;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+      .team-member {
+        flex: 1;
+        max-width: 150px;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20px);
+      }
 
-.team-member-img:hover {
-  transform: scale(1.1) rotate(5deg);
-}
+      .team-member-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: 0 auto 15px;
+        overflow: hidden;
+        background-color: #f5f5f5;
+        transition: transform 0.3s ease;
+      }
 
-.team-member-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+      .team-member-img:hover {
+        transform: scale(1.1) rotate(5deg);
+      }
 
-.team-member-name {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  padding: 5px 10px;
-  display: inline-block;
-  margin-bottom: 10px;
-  font-weight: 600;
-  white-space: nowrap; /* Prevent text wrapping */
-  overflow: hidden;
-  text-overflow: ellipsis; /* Add ellipsis for long names */
-  max-width: 100%;
-}
+      .team-member-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
 
-.team-member-role {
-  font-weight: bold;
-  font-size: 0.9rem;
-  white-space: nowrap; /* Prevent text wrapping */
-  overflow: hidden;
-  text-overflow: ellipsis; /* Add ellipsis for long roles */
-}
+      .team-member-name {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 5px 10px;
+        display: inline-block;
+        margin-bottom: 10px;
+        margin-left: -10px;
+      }
 
-/* Animation Class for JavaScript */
-.scroll-animation.animate {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
+      .team-member-role {
+        font-weight: bold;
+      }
 
-/* Responsive Breakpoints */
-@media screen and (max-width: 768px) {
-  .team-section {
-    padding: 30px 4%;
-  }
-  
-  .team-title {
-    font-size: 1.8rem;
-  }
-  
-  .team-members {
-    justify-content: flex-start; /* Start from left on mobile */
-    gap: 20px;
-  }
-  
-  /* Hide scrollbar for clean look but maintain functionality */
-  .team-members::-webkit-scrollbar {
-    height: 4px;
-  }
-  
-  .team-members::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 4px;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .team-section {
-    padding: 25px 3%;
-  }
-  
-  .team-title {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .team-member {
-    width: 130px;
-  }
-  
-  .team-member-img {
-    width: 80px;
-    height: 80px;
-  }
-  
-  .team-member-name {
-    font-size: 0.9rem;
-  }
-  
-  .team-member-role {
-    font-size: 0.8rem;
-  }
-}
       /* Pre-register section */
       .pre-register {
         background-color: #7986cb;
@@ -832,10 +758,12 @@
       <div class="team-members">
         <div class="team-member scroll-animation">
           <div class="team-member-img">
+            <a href="https://stylewithingrace.com/">
             <img
               src="https://i.postimg.cc/Hxh5hDFw/1740918461489.jpg"
               alt="Team Member"
             />
+          </a>
           </div>
           <div class="team-member-name">Kesari Brahamrishendra</div>
           <div class="team-member-role">Founder</div>
@@ -860,20 +788,24 @@
           <div class="team-member-name">Vaishnavi Rajesh</div>
           <div class="team-member-role">Partner</div>
         </div>
-      </div>
-      <div class="team-member scroll-animation">
-        <div class="team-member-img">
-          <a href="https://stylewithingrace.com">
-          <img
-            src="https://stylewithingrace.com/wp-content/uploads/elementor/thumbs/New-About-Page-Photo-2024-qids6gfvk1z8f2xb7tj04r4thwq0qcxwrfafs3japs.png"
-            alt="Team Member"
-          />
-        </a>
+
+        <div class="team-member scroll-animation">
+          <div class="team-member-img">
+            <a href="https://stylewithingrace.com/">
+            <img
+              src="https://stylewithingrace.com/wp-content/uploads/elementor/thumbs/New-About-Page-Photo-2024-qids6gfvk1z8f2xb7tj04r4thwq0qcxwrfafs3japs.png"
+              alt="Team Member"
+            />
+          </a>
+
+          </div>
+          <div class="team-member-name">Amy Zanatta</div>
+          <div class="team-member-role">Fashion Advisor</div>
         </div>
-        <div class="team-member-name">Amy Zanatta</div>
-        <div class="team-member-role">Fashion Advisor & Reviewer</div>
       </div>
-    </div>
+
+      </div>
+     
     </section>
 
     <section class="pre-register scroll-animation">
