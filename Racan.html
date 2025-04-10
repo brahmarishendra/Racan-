@@ -1,12 +1,9 @@
-<!-- Making Racan AI Landing page Using Html , CSS & JS and Firebase-->
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Racan - AI Pre-register</title>
+    <title>Racan - AI Powered Fashion</title>
     <link
       rel="shortcut icon"
       href="https://i.postimg.cc/50B939gH/Logo.png"
@@ -18,704 +15,1532 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <script type="module" src="Racan.js"></script>
+   
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", serif;
-      }
-
-      body {
-        background-color: #f5f5f5;
-        color: #333;
-        line-height: 1.6;
-        overflow-x: hidden;
-      }
-
-      .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #1a2352;
-        padding: 15px 5%;
-        position: relative;
-        transition: background-color 0.3s ease;
-      }
-
-      .logo img {
-        height: 35px;
-      }
-
-      .join-now-btn {
-        background-color: #1a2352;
-        color: white;
-        border: 2.8px solid white;
-        border-radius: 20px;
-        padding: 8px 20px;
-        font-weight: 750;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-decoration: none;
-      }
-
-      .join-now-btn:hover {
-        background-color: white;
-        color: #1a2352;
-        transform: scale(1.05);
-      }
-
-      .hero-container {
-        background-color: #d7cdff;
-        padding: 30px 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeInUp 1s forwards;
-      }
-
-      @keyframes fadeInUp {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .hero {
-        width: 90%;
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-
-      .hero-text {
-        flex: 1;
-        min-width: 300px;
-        padding-right: 20px;
-      }
-
-      .hero-text h1 {
-        font-size: 2rem;
-        margin-bottom: 15px;
-        color: #1a2352;
-      }
-
-      .signup-btn {
-        display: flex;
-        align-items: center;
-        background-color: #333;
-        color: white;
-        border: none;
-        border-radius: 60px;
-        padding: 8px 25px;
-        margin-top: 20px;
-        cursor: pointer;
-        font-size: 15px;
-        font-weight: bold;
-        transition: all 0.3s ease;
-      }
-
-      .signup-btn:hover {
-        background-color: #444;
-        transform: scale(1.05);
-      }
-
-      .signup-btn img {
-        height: 30px;
-        margin-left: 10px;
-      }
-
-      .hero-image {
-        flex: 1;
-        min-width: 300px;
-        text-align: center;
-      }
-
-      .hero-image img {
-        max-width: 100%;
-        border-radius: 5px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease;
-      }
-
-      .hero-image img:hover {
-        transform: scale(1.05);
-      }
-
-      .features-title {
-        padding: 20px 5%;
-        background-color: #3f51b5;
-        color: white;
-        font-size: 2rem;
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      .features {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 20px 5%;
-        background: linear-gradient(to bottom, #3f51b5, #5c6bc0);
-      }
-
-      .feature-card {
-        flex: 1 0 30%;
-        min-width: 250px;
-        text-align: center;
-        margin-bottom: 20px;
-        background-color: rgba(255, 255, 255, 0.275);
-        border-radius: 5px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        margin: 10px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        transform: translateY(40px);
-        opacity: 0;
-      }
-
-      .feature-img {
-        height: 360px;
-        overflow: hidden;
-      }
-
-      .feature-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-      }
-
-      .feature-img img:hover {
-        transform: scale(1.1);
-      }
-
-      .feature-title {
-        padding: 15px;
-        font-weight: bold;
-        color: #ffffff;
-      }
-
-      .additional-features {
-        background: linear-gradient(to bottom, #5c6bc0, #7986cb);
-        padding: 40px 5%;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      .additional-features-content {
-        flex: 1;
-        max-width: 50%;
-      }
-
-      .additional-features ul {
-        list-style-type: none;
-        margin-bottom: 0;
-      }
-
-      .additional-features li {
-        margin-bottom: 25px;
-        font-weight: 500;
-        font-size: 1rem;
-        margin-top: -20px;
-        opacity: 0;
-        margin-left: 20px;
-        text-align: left;
-        transform: translateX(-20px);
-      }
-
-      .additional-img {
-        flex: 1;
-        text-align: right;
-      }
-
-      .additional-img img {
-        max-width: 80%;
-        border-radius: 8px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease;
-      }
-
-      .additional-img img:hover {
-        transform: scale(1.05) rotate(3deg);
-      }
-
-      @media (max-width: 768px) {
-        .additional-features {
-          flex-direction: column;
-        }
-
-        .additional-features-content {
-          max-width: 100%;
-          margin-bottom: 40px;
-        }
-
-        .additional-img img {
-          max-width: 100%;
-          margin-top: 0;
-        }
-      }
-
-      .magazine-banner {
-        background-color: #369371;
-        padding: 0;
-        text-align: center;
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      .magazine-banner img {
-        max-width: 80%;
-        vertical-align: middle;
-        transition: transform 0.5s ease;
-      }
-
-      .magazine-banner:hover img {
-        transform: translateY(-5px) scale(1.01);
-      }
-
-      .how-it-works {
-        background-color: #7986cb;
-        padding: 20px 5%;
-        color: white;
-        text-align: center;
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      .how-it-works h2 {
-        margin-bottom: 20px;
-        font-size: 1.8rem;
-      }
-
-      .how-it-works-steps {
-        text-align: left;
-        max-width: 600px;
-        margin: 0 auto;
-      }
-
-      .step {
-        margin-bottom: 15px;
-        display: flex;
-        align-items: center;
-        opacity: 0;
-        transform: translateX(-20px);
-      }
-
-      .step-divider {
-        border: none;
-        height: 1px;
-        background-color: rgba(255, 255, 255, 0.3);
-        margin: 10px 0;
-      }
-
-      @keyframes fadeInLeft {
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-
-      .team-section {
-        background-color: #7986cb;
-        padding: 20px 5%;
-        color: white;
-        text-align: center;
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      .team-title {
-        font-size: 1.5rem;
-        margin-bottom: 30px;
-      }
-
-      .team-members {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 58px;
-      }
-
-      .team-member {
-        flex: 1;
-        max-width: 150px;
-        text-align: center;
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      .team-member-img {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        margin: 0 auto 15px;
-        overflow: hidden;
-        background-color: #f5f5f5;
-        transition: transform 0.3s ease;
-      }
-
-      .team-member-img:hover {
-        transform: scale(1.1) rotate(5deg);
-      }
-
-      .team-member-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .team-member-name {
-        background-color: rgba(255, 255, 255, 0.2);
-        border-radius: 20px;
-        padding: 5px 10px;
-        display: inline-block;
-        margin-bottom: 10px;
-        margin-left: -10px;
-      }
-
-      .team-member-role {
-        font-weight: bold;
-      }
-
-      /* Pre-register section */
-      .pre-register {
-        background-color: #7986cb;
-        padding: 30px 5%;
-        text-align: center;
-        color: white;
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      .pre-register p {
-        max-width: 600px;
-        margin: 0 auto 20px;
-        font-weight: 500;
-      }
-
-      .register-btn {
-        background-color: #a5d6a7;
-        color: #333;
-        border: none;
-        border-radius: 20px;
-        padding: 10px 30px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: inline-block;
-      }
-
-      .register-btn:hover {
-        background-color: #81c784;
-        transform: scale(1.05);
-      }
-
-      /* Footer */
-      .footer {
-        background-color: #000;
-        color: white;
-        padding: 30px 5%;
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      .footer-logo {
-        margin-bottom: 20px;
-      }
-
-      .footer-logo img {
-        height: 35px;
-      }
-
-      .contact-info {
-        margin-bottom: 20px;
-      }
-
-      .social-media {
-        margin-bottom: 20px;
-      }
-
-      .social-media h3 {
-        margin-bottom: 10px;
-      }
-
-      .social-icons {
-        display: flex;
-        gap: 15px;
-      }
-
-      .social-icon {
-        width: 48px;
-        height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: transform 0.3s ease;
-        cursor: pointer;
-      }
-
-      .social-icon:hover {
-        transform: scale(1.1) rotate(10deg);
-      }
-
-      .social-icon img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        cursor: pointer;
-      }
-
-      .footer-links {
-        padding-top: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-      }
-
-      .footer-link {
-        color: white;
-        text-decoration: none;
-      }
-
-      .footer-link:hover {
-        text-decoration: underline;
-      }
-
-      /* 3D animation effects */
-      .animate-3d {
-        transition: transform 0.5s ease;
-        transform-style: preserve-3d;
-      }
-
-      .animate-3d:hover {
-        transform: perspective(1000px) rotateY(5deg) rotateX(5deg);
-      }
-
-      /* Responsive design */
-      @media (max-width: 768px) {
-        .hero {
-          flex-direction: column;
-        }
-
-        .hero-text {
-          padding-right: 0;
-          margin-bottom: 20px;
-        }
-
-        .features {
-          justify-content: center;
-        }
-
-        .feature-card {
-          flex: 0 0 100%;
-          max-width: 400px;
-        }
-
-        .team-members {
-          gap: 18px;
-        }
-
-        .team-member {
-          flex: 0 0 100px;
-          gap: 60px;
-          margin-bottom: 20px;
-        }
-
-        .team-member-name {
-          margin-bottom: 20px;
-        }
-      }
-
-      /* Animation classes */
-      .fade-in {
-        animation: fadeIn 1s forwards;
-      }
-
-      .fade-in-up {
-        animation: fadeInUp 1s forwards;
-      }
-
-      .fade-in-left {
-        animation: fadeInLeft 1s forwards;
-      }
-
-      .fade-in-right {
-        animation: fadeInRight 1s forwards;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      @keyframes fadeInRight {
-        from {
-          opacity: 0;
-          transform: translateX(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-
-      /* Go to Top Button */
-      .go-top-btn {
-        position: fixed;
-        bottom: 60px;
-        right: 20px;
-        background-color: #93f400;
-        color: rgb(3, 0, 92);
-        border: none;
-        border-radius: 0;
-        width: 40px;
-        height: 46px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 4px;
-        cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
-        font-size: large;
-        font-weight: bold;
-        transition: opacity 0.3s ease, visibility 0.3s ease;
-        cursor: pointer;
-      }
-
-      .go-top-btn.show {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .go-top-btn::after {
-        content: "↑";
-        font-size: 25px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+      :root {
+  --primary-color: #6c63ff;
+  --secondary-color: #ff6b6b;
+  --accent-color: #00d9ff;
+  --dark-color: #1a1a2e;
+  --light-color: #ffffff;
+  --gray-color: #f5f5f5;
+  --text-color: #333333;
+  --light-text: #ffffff;
+  --gradient-1: linear-gradient(135deg, #6c63ff, #ff6b6b);
+  --gradient-2: linear-gradient(135deg, #00d9ff, #6c63ff);
+  --gradient-3: linear-gradient(135deg, #ff6b6b, #ffa26b);
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 15px 30px rgba(0, 0, 0, 0.15);
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 20px;
+  --border-radius-xl: 30px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--light-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  outline: none;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-tag {
+  display: inline-block;
+  background: var(--gradient-2);
+  color: var(--light-text);
+  padding: 6px 16px;
+  border-radius: var(--border-radius-xl);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 15px 5%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.navbar.scrolled {
+  padding: 10px 5%;
+  box-shadow: var(--shadow-md);
+}
+
+.logo img {
+  height: 35px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  color: var(--text-color);
+  font-weight: 500;
+  position: relative;
+  transition: var(--transition);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-1);
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.join-now-btn {
+  background: var(--gradient-1);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-xl);
+  padding: 10px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.join-now-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Hero Section */
+.hero-container {
+  background-color: var(--light-color);
+  padding: 140px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg-shapes .shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: -1;
+}
+
+.shape-1 {
+  background: rgba(108, 99, 255, 0.4);
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  left: -100px;
+}
+
+.shape-2 {
+  background: rgba(255, 107, 107, 0.3);
+  width: 400px;
+  height: 400px;
+  top: 20%;
+  right: -200px;
+}
+
+.shape-3 {
+  background: rgba(0, 217, 255, 0.2);
+  width: 250px;
+  height: 250px;
+  bottom: -50px;
+  left: 30%;
+}
+
+.hero {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background-color: rgba(108, 99, 255, 0.1);
+  color: var(--primary-color);
+  padding: 8px 16px;
+  border-radius: var(--border-radius-xl);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+.gradient-text {
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 32px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.signup-btn {
+  display: flex;
+  align-items: center;
+  background: var(--gradient-1);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-xl);
+  padding: 12px 24px;
+  font-weight: 600;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.signup-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.signup-btn img {
+  height: 24px;
+  margin-left: 10px;
+}
+
+.demo-btn {
+  display: flex;
+  align-items: center;
+  background-color: rgba(108, 99, 255, 0.1);
+  color: var(--primary-color);
+  border-radius: var(--border-radius-xl);
+  padding: 12px 24px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.demo-btn:hover {
+  background-color: rgba(108, 99, 255, 0.2);
+}
+
+.play-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 10px;
+  font-size: 0.7rem;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 32px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.hero-image {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-image img {
+  max-width: 100%;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.floating-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 8px 16px;
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-md);
+  animation: float 3s ease-in-out infinite;
+}
+
+.badge-1 {
+  top: 20px;
+  left: -20px;
+  animation-delay: 0s;
+}
+
+.badge-2 {
+  bottom: 40px;
+  right: -20px;
+  animation-delay: 1.5s;
+}
+
+.badge-icon {
+  font-size: 1.2rem;
+  margin-right: 8px;
+}
+
+.badge-text {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Features Section */
+.features-section {
+  padding: 100px 5%;
+  background-color: var(--gray-color);
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 380px;
+  background-color: var(--light-color);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  transform: translateY(0);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.feature-img {
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.feature-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.feature-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--gradient-3);
+  color: white;
+  padding: 4px 12px;
+  border-radius: var(--border-radius-xl);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.feature-content {
+  padding: 24px;
+}
+
+.feature-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--dark-color);
+}
+
+.feature-description {
+  color: #666;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+
+.feature-link {
+  color: var(--primary-color);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.feature-link:hover {
+  color: var(--secondary-color);
+}
+
+.arrow {
+  margin-left: 4px;
+  transition: var(--transition);
+}
+
+.feature-link:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Additional Features Section */
+.additional-features {
+  background: var(--gradient-2);
+  padding: 80px 5%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.additional-features-content {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.additional-features-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 32px;
+}
+
+.features-list {
+  list-style: none;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-md);
+  padding: 16px;
+  transition: var(--transition);
+}
+
+.feature-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+  margin-right: 16px;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.feature-text h3 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.feature-text p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.additional-img {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  position: relative;
+}
+
+.additional-img img {
+  width: 100%;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.pulse-dot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 0 rgba(255, 107, 107, 0.4);
+  animation: pulse 2s infinite;
+}
+
+.dot-1 {
+  top: 20%;
+  left: 30%;
+  animation-delay: 0s;
+}
+
+.dot-2 {
+  top: 60%;
+  left: 70%;
+  animation-delay: 0.5s;
+}
+
+.dot-3 {
+  top: 40%;
+  left: 50%;
+  animation-delay: 1s;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(255, 107, 107, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+  }
+}
+
+/* Magazine Banner Section */
+.magazine-banner {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.magazine-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.magazine-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 10%;
+  color: white;
+}
+
+.magazine-overlay h2 {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.magazine-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 24px;
+  max-width: 500px;
+}
+
+.explore-btn {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-xl);
+  padding: 12px 32px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.explore-btn:hover {
+  background-color: #ff5252;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* How It Works Section */
+.how-it-works {
+  padding: 100px 5%;
+  background-color: var(--light-color);
+}
+
+.how-it-works-steps {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  background-color: white;
+  border-radius: var(--border-radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.step:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.step-number {
+  background: var(--gradient-1);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.step-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: var(--dark-color);
+}
+
+.step-content p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.step-connector {
+  width: 2px;
+  height: 30px;
+  background-color: #ddd;
+  margin: 0 auto;
+}
+
+.cta-container {
+  text-align: center;
+}
+
+.get-started-btn {
+  background: var(--gradient-1);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-xl);
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  transition: var(--transition);
+}
+
+.get-started-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.learn-more-link {
+  color: var(--primary-color);
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 100px 5%;
+  background-color: var(--gray-color);
+}
+
+.testimonial-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial {
+  flex: 1;
+  min-width: 300px;
+  max-width: 380px;
+  background-color: white;
+  border-radius: var(--border-radius-md);
+  padding: 30px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.testimonial:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.testimonial-rating {
+  color: #ffb400;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.quote {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+}
+
+.author-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 16px;
+}
+
+.author-name {
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+.author-title {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Team Section */
+.team-section {
+  padding: 100px 5%;
+  background-color: var(--light-color);
+}
+
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-member {
+  flex: 1;
+  min-width: 220px;
+  max-width: 260px;
+  text-align: center;
+}
+
+.team-member-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-md);
+}
+
+.team-member-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.social-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(108, 99, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.team-member-img:hover .social-overlay {
+  opacity: 1;
+}
+
+.team-member-img:hover img {
+  transform: scale(1.1);
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.social-icon:hover {
+  transform: translateY(-5px);
+}
+
+.linkedin {
+  background-image: url('https://i.postimg.cc/FsWk02tm/icons8-linkedin-144.png');
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.globe {
+  background-image: url('https://i.postimg.cc/9QCdHfdj/globe-icon.png');
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.team-member-info {
+  padding: 0 10px;
+}
+
+.team-member-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: var(--dark-color);
+}
+
+.team-member-role {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+/* Pre-register Section */
+.pre-register {
+  background: var(--gradient-3);
+  padding: 80px 5%;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.pre-register-content {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.pre-register-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.pre-register-content p {
+  margin-bottom: 24px;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.register-btn {
+  background-color: white;
+  color: var(--secondary-color);
+  border: none;
+  border-radius: var(--border-radius-xl);
+  padding: 12px 32px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.register-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  background-color: var(--dark-color);
+  color: white;
+}
+
+.newsletter {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-md);
+  padding: 30px;
+}
+
+.newsletter h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.newsletter-form {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.email-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  border-radius: var(--border-radius-xl) 0 0 var(--border-radius-xl);
+  font-size: 1rem;
+  outline: none;
+}
+
+.subscribe-btn {
+  background-color: var(--dark-color);
+  color: white;
+  border: none;
+  border-radius: 0 var(--border-radius-xl) var(--border-radius-xl) 0;
+  padding: 0 24px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.subscribe-btn:hover {
+  background-color: black;
+}
+
+.newsletter-note {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--dark-color);
+  color: white;
+  padding: 80px 5% 30px;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  gap: 40px;
+}
+
+.footer-logo {
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  height: 35px;
+}
+
+.footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-column h3 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.footer-column h3::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--gradient-1);
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  opacity: 0.8;
+  transition: var(--transition);
+}
+
+.footer-column ul li a:hover {
+  opacity: 1;
+  color: var(--primary-color);
+}
+
+.social-media {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.social-media h3 {
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icons .social-icon {
+  width: 48px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.social-icons .social-icon:hover {
+  transform: translateY(-5px) rotate(10deg);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.social-icons .social-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-link {
+  opacity: 0.8;
+  transition: var(--transition);
+}
+
+.footer-link:hover {
+  opacity: 1;
+  color: var(--primary-color);
+}
+
+.copyright {
+  text-align: center;
+  opacity: 0.6;
+  font-size: 0.9rem;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Go to Top Button */
+.go-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--gradient-1);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  box-shadow: var(--shadow-md);
+  z-index: 999;
+}
+
+.go-top-btn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.go-top-btn::after {
+  content: "↑";
+  font-size: 1.5rem;
+}
+
+.go-top-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Animation Classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .hero-text h1 {
+    font-size: 2.8rem;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .magazine-overlay h2 {
+    font-size: 2.5rem;
+  }
+  
+  .pre-register-content h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .hero-text h1 {
+    font-size: 2.3rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .hero-stats {
+    justify-content: space-between;
+  }
+  
+  .magazine-overlay h2 {
+    font-size: 2rem;
+  }
+  
+  .magazine-overlay p {
+    font-size: 1rem;
+  }
+  
+  .how-it-works-steps {
+    gap: 40px;
+  }
+  
+  .step-connector {
+    height: 40px;
+  }
+  
+  .team-member {
+    min-width: 160px;
+  }
+  
+  .team-member-img {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .stat {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .magazine-overlay {
+    align-items: center;
+    text-align: center;
+    padding: 0 5%;
+  }
+  
+  .magazine-overlay h2 {
+    font-size: 1.8rem;
+  }
+  
+  .step {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .step-number {
+    margin-bottom: 16px;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+  }
+  
+  .email-input {
+    border-radius: var(--border-radius-xl);
+    margin-bottom: 10px;
+  }
+  
+  .subscribe-btn {
+    border-radius: var(--border-radius-xl);
+    width: 100%;
+    padding: 12px;
+  }
+}
     </style>
   </head>
 
   <body>
+    <!-- Navigation Bar -->
     <nav class="navbar">
       <div class="logo">
-        <img src="https://i.postimg.cc/CMnkxnGs/image-1.png" alt="Racan Logo" />
+        <img src="https://i.postimg.cc/zfkpKNrp/image-1.png alt"="Racan Logo" />
       </div>
-      <a href="Subscribe.html" class="join-now-btn">
+      <div class="nav-links">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#team" class="nav-link">Team</a>
+      </div>
+      <a href="https://racan.vercel.app/Subscribe.html" class="join-now-btn">
         Subscribe
       </a>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero-container">
+      <div class="hero-bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
       <div class="hero">
         <div class="hero-text">
-          <h1>Racan an AI powered Fashion E-commerce</h1>
-          <button class="signup-btn">
-            register with
-            <img
-              src="https://i.postimg.cc/Hx47MR20/icons8-google-48.png"
-              alt="Google Icon"
-            />
-          </button>
+          <div class="hero-badge">AI-POWERED FASHION</div>
+          <h1>Redefine Your Style With <span class="gradient-text">Racan</span></h1>
+          <p>Experience the future of fashion with AI-powered styling, virtual try-ons, and personalized recommendations that match your unique taste.</p>
+          <div class="hero-buttons">
+            <button class="signup-btn" id="googleSignup">
+              Register with
+              <img
+                src="https://i.postimg.cc/Hx47MR20/icons8-google-48.png"
+                alt="Google Icon"
+              />
+            </button>
+            <button class="demo-btn">
+              <span class="play-icon">▶</span>
+              Watch Demo
+            </button>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-number">Leaving soon</span>
+              <span class="stat-label">Our Application</span>
+            </div>
+          </div>
         </div>
         <div class="hero-image">
-          <img
-            src="https://i.postimg.cc/NMkMKY0Y/Mac-Book-Air-2022.png"
-            alt="Fashion Website Preview"
-            class="animate-3d"
-          />
+          <div class="image-wrapper">
+            <img
+              src="https://i.postimg.cc/NMkMKY0Y/Mac-Book-Air-2022.png"
+              alt="Fashion Website Preview"
+              class="animate-3d"
+            />
+            <div class="floating-badge badge-1">
+              <span class="badge-icon">🔥</span>
+              <span class="badge-text">AI Powered</span>
+            </div>
+            <div class="floating-badge badge-2">
+              <span class="badge-icon">👗</span>
+              <span class="badge-text">Virtual Try-On</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <div class="features-title scroll-animation">Racan Features</div>
-    <section class="features">
-      <div class="feature-card scroll-animation">
-        <div class="feature-img">
-          <img
-            src="https://i.postimg.cc/yxbBNqxY/Virtual-tryon.png"
-            alt="Virtual Try-On"
-            class="animate-3d"
-          />
-        </div>
-        <div class="feature-title">Virtual Try-On</div>
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+      <div class="section-header">
+        <div class="section-tag">WHAT WE OFFER</div>
+        <h2 class="section-title">Racan Features</h2>
+        <p class="section-subtitle">Discover how our AI-powered platform revolutionizes your fashion experience</p>
       </div>
-      <div class="feature-card scroll-animation">
-        <div class="feature-img">
-          <img
-            src="https://i.postimg.cc/VvypZYJt/ddf.png"
-            alt="AI-Powered Styling"
-            class="animate-3d"
-          />
+      
+      <div class="features">
+        <div class="feature-card scroll-animation">
+          <div class="feature-img">
+            <img
+              src="https://i.postimg.cc/yxbBNqxY/Virtual-tryon.png"
+              alt="Virtual Try-On"
+              class="animate-3d"
+            />
+            <div class="feature-badge">Popular</div>
+          </div>
+          <div class="feature-content">
+            <div class="feature-title">Virtual Try-On</div>
+            <div class="feature-description">See how clothes look on you before buying with our advanced AR technology.</div>
+            <a href="#" class="feature-link">Learn more <span class="arrow">→</span></a>
+          </div>
         </div>
-        <div class="feature-title">AI-Powered Styling</div>
-      </div>
-      <div class="feature-card scroll-animation">
-        <div class="feature-img">
-          <img
-            src="https://i.postimg.cc/xdDmdhNR/e.png"
-            alt="Smart Wardrobe Assistant"
-            class="animate-3d"
-          />
+        
+        <div class="feature-card scroll-animation">
+          <div class="feature-img">
+            <img
+              src="https://i.postimg.cc/VvypZYJt/ddf.png"
+              alt="AI-Powered Styling"
+              class="animate-3d"
+            />
+            <div class="feature-badge">Trending</div>
+          </div>
+          <div class="feature-content">
+            <div class="feature-title">AI-Powered Styling</div>
+            <div class="feature-description">Get personalized outfit recommendations based on your style preferences.</div>
+            <a href="#" class="feature-link">Learn more <span class="arrow">→</span></a>
+          </div>
         </div>
-        <div class="feature-title">Smart Wardrobe Assistant</div>
+        
+        <div class="feature-card scroll-animation">
+          <div class="feature-img">
+            <img
+              src="https://i.postimg.cc/xdDmdhNR/e.png"
+              alt="Smart Wardrobe Assistant"
+              class="animate-3d"
+            />
+            <div class="feature-badge">New</div>
+          </div>
+          <div class="feature-content">
+            <div class="feature-title">Smart Wardrobe Assistant</div>
+            <div class="feature-description">Organize your closet and create new outfit combinations with AI assistance.</div>
+            <a href="#" class="feature-link">Learn more <span class="arrow">→</span></a>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- Additional Features Section -->
     <section class="additional-features scroll-animation">
-      <ul>
-        <li class="scroll-animation">
-          Multi-Language Support: Get fashion advice in your preferred language.
-        </li>
-        <li class="scroll-animation">
-          Exclusive Fashion Challenges: Join styling contests and showcase your
-          creativity.
-        </li>
-        <li class="scroll-animation">
-          Seamless Shopping Experience: Browse and shop from top fashion brands.
-        </li>
-        <li class="scroll-animation">
-          Traditional Wear based on their Region
-        </li>
-        <li class="scroll-animation">
-          Live Fashion Webinars & Expert Styling Tips , Designer and Model can
-          Post there work.
-        </li>
-      </ul>
+      <div class="additional-features-content">
+        <div class="section-tag">MORE FEATURES</div>
+        <h2>Elevate Your Fashion Game</h2>
+        <ul class="features-list">
+          <li class="feature-item scroll-animation">
+            <div class="feature-icon">🌐</div>
+            <div class="feature-text">
+              <h3>Multi-Language Support</h3>
+              <p>Get fashion advice in your preferred language, making style accessible to everyone.</p>
+            </div>
+          </li>
+          <li class="feature-item scroll-animation">
+            <div class="feature-icon">🏆</div>
+            <div class="feature-text">
+              <h3>Exclusive Fashion Challenges</h3>
+              <p>Join styling contests, win prizes, and showcase your creativity to the world.</p>
+            </div>
+          </li>
+          <li class="feature-item scroll-animation">
+            <div class="feature-icon">🛍️</div>
+            <div class="feature-text">
+              <h3>Seamless Shopping Experience</h3>
+              <p>Browse and shop from top fashion brands with personalized recommendations.</p>
+            </div>
+          </li>
+          <li class="feature-item scroll-animation">
+            <div class="feature-icon">👗</div>
+            <div class="feature-text">
+              <h3>Regional Traditional Wear</h3>
+              <p>Discover cultural fashion specific to your region with authentic designs.</p>
+            </div>
+          </li>
+          <li class="feature-item scroll-animation">
+            <div class="feature-icon">📱</div>
+            <div class="feature-text">
+              <h3>Live Fashion Webinars</h3>
+              <p>Learn from professionals and showcase your designs to a global audience.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
       <div class="additional-img">
         <img
           src="https://i.postimg.cc/gJy3Kfgk/image-2.png"
           alt="AI Fashion App"
           class="animate-3d scroll-animation"
         />
+        <div class="img-overlay">
+          <div class="pulse-dot dot-1"></div>
+          <div class="pulse-dot dot-2"></div>
+          <div class="pulse-dot dot-3"></div>
+        </div>
       </div>
     </section>
 
+    <!-- Magazine Banner Section -->
     <section class="magazine-banner scroll-animation">
+      <div class="magazine-overlay">
+        <h2>Fashion Reimagined</h2>
+        <p>Discover the future of style with Racan AI</p>
+        <button class="explore-btn">Explore Now</button>
+      </div>
       <img
         src="https://i.postimg.cc/FKjBfbft/image.png"
         alt="Fashion Magazine Banner"
@@ -723,137 +1548,283 @@
       />
     </section>
 
-    <section class="how-it-works scroll-animation">
-      <h2>How It Works?</h2>
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works scroll-animation">
+      <div class="section-header">
+        <div class="section-tag">SIMPLE PROCESS</div>
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">Four easy steps to transform your fashion experience</p>
+      </div>
+      
       <div class="how-it-works-steps">
         <div class="step scroll-animation">
-          <p>
-            Upload your photo & details - Let AI analyze your fashion profile.
-          </p>
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Upload Your Profile</h3>
+            <p>Upload your photo & details - Let AI analyze your fashion profile and preferences.</p>
+          </div>
         </div>
-        <hr class="step-divider" />
+        
+        <div class="step-connector"></div>
+        
         <div class="step scroll-animation">
-          <p>Discover personalized outfits - Get AI-curated recommendations.</p>
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Get Recommendations</h3>
+            <p>Discover personalized outfits - Get AI-curated recommendations that match your style.</p>
+          </div>
         </div>
-        <hr class="step-divider" />
+        
+        <div class="step-connector"></div>
+        
         <div class="step scroll-animation">
-          <p>
-            Try it on virtually - See how the outfit looks before purchasing.
-          </p>
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Virtual Try-On</h3>
+            <p>Try it on virtually - See how the outfit looks before purchasing with AR technology.</p>
+          </div>
         </div>
-        <hr class="step-divider" />
+        
+        <div class="step-connector"></div>
+        
         <div class="step scroll-animation">
-          <p>
-            Shop or share your style - Buy your look or showcase your fashion
-            online.
-          </p>
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Shop & Share</h3>
+            <p>Shop or share your style - Buy your look or showcase your fashion online to friends.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="cta-container">
+        <button class="get-started-btn">Get Started Now</button>
+        <a href="#" class="learn-more-link">Learn more about the process</a>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials scroll-animation">
+      <div class="section-header">
+        <div class="section-tag">TESTIMONIALS</div>
+        <h2 class="section-title">What Our Users Say</h2>
+        <p class="section-subtitle">Hear from fashion enthusiasts who love Racan</p>
+      </div>
+      
+      <div class="testimonial-container">
+        <div class="testimonial scroll-animation">
+          <div class="testimonial-rating">★★★★★</div>
+          <div class="quote">"Racan has completely transformed how I shop for clothes. The virtual try-on feature is incredibly accurate and saves me so much time!"</div>
+          <div class="testimonial-author">
+            <img src="https://i.postimg.cc/8C2fKSSZ/portrait-1.jpg" alt="Sarah J." class="author-img">
+            <div class="author-info">
+              <div class="author-name">Sarah J.</div>
+              <div class="author-title">Fashion Blogger</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial scroll-animation">
+          <div class="testimonial-rating">★★★★★</div>
+          <div class="quote">"The AI styling recommendations are spot on. It's like having a personal stylist in my pocket. I've discovered so many new looks!"</div>
+          <div class="testimonial-author">
+            <img src="https://i.postimg.cc/QCLm2svy/portrait-2.jpg" alt="Michael T." class="author-img">
+            <div class="author-info">
+              <div class="author-name">Michael T.</div>
+              <div class="author-title">Designer</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial scroll-animation">
+          <div class="testimonial-rating">★★★★★</div>
+          <div class="quote">"I love how Racan helps me discover new styles that I wouldn't have tried otherwise. The regional wear feature is amazing!"</div>
+          <div class="testimonial-author">
+            <img src="https://i.postimg.cc/Jz7ZbvxQ/portrait-3.jpg" alt="Priya K." class="author-img">
+            <div class="author-info">
+              <div class="author-name">Priya K.</div>
+              <div class="author-title">Student</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="team-section scroll-animation">
-      <h2 class="team-title">our team & collaboration:</h2>
+    <!-- Team Section -->
+    <section id="team" class="team-section scroll-animation">
+      <div class="section-header">
+        <div class="section-tag">OUR TEAM</div>
+        <h2 class="section-title">Meet The Innovators</h2>
+        <p class="section-subtitle">The creative minds behind Racan's AI fashion revolution</p>
+      </div>
+      
       <div class="team-members">
         <div class="team-member scroll-animation">
           <div class="team-member-img">
             <a href="https://www.linkedin.com/in/kesari-brahmarishendra-8a54b0260/">
-            <img
-              src="https://i.postimg.cc/Hxh5hDFw/1740918461489.jpg"
-              alt="Team Member"
-            />
-          </a>
+              <img
+                src="https://i.postimg.cc/Hxh5hDFw/1740918461489.jpg"
+                alt="Kesari Brahamrishendra"
+              />
+              <div class="social-overlay">
+                <div class="social-icon linkedin"></div>
+              </div>
+            </a>
           </div>
-          <div class="team-member-name">Kesari Brahamrishendra</div>
-          <div class="team-member-role">Founder</div>
+          <div class="team-member-info">
+            <div class="team-member-name">Kesari Brahamrishendra</div>
+            <div class="team-member-role">Founder</div>
+          </div>
         </div>
+        
         <div class="team-member scroll-animation">
           <div class="team-member-img">
             <img
               src="https://i.postimg.cc/pXkFjC7K/Whats-App-Image-2025-03-08-at-23-17-43-05d1786f.jpg"
-              alt="Team Member"
+              alt="Ganji Lokesh"
             />
+            <div class="social-overlay">
+              <div class="social-icon linkedin"></div>
+            </div>
           </div>
-          <div class="team-member-name">Ganji Lokesh</div>
-          <div class="team-member-role">Co-founder</div>
+          <div class="team-member-info">
+            <div class="team-member-name">Ganji Lokesh</div>
+            <div class="team-member-role">Co-founder</div>
+          </div>
         </div>
+        
         <div class="team-member scroll-animation">
           <div class="team-member-img">
             <img
               src="https://i.postimg.cc/C1LdPJHg/Whats-App-Image-2025-03-08-at-15-53-37-b38eef7f.jpg"
-              alt="Team Member"
+              alt="Vaishnavi Rajesh"
             />
+            <div class="social-overlay">
+              <div class="social-icon linkedin"></div>
+            </div>
           </div>
-          <div class="team-member-name">Vaishnavi Rajesh</div>
-          <div class="team-member-role">Partner & Maketing</div>
+          <div class="team-member-info">
+            <div class="team-member-name">Vaishnavi Rajesh</div>
+            <div class="team-member-role">Partner & Marketing</div>
+          </div>
         </div>
-
+        
         <div class="team-member scroll-animation">
           <div class="team-member-img">
             <a href="https://stylewithingrace.com/">
-            <img
-              src="https://stylewithingrace.com/wp-content/uploads/elementor/thumbs/New-About-Page-Photo-2024-qids6gfvk1z8f2xb7tj04r4thwq0qcxwrfafs3japs.png"
-              alt="Team Member"
-            />
-          </a>
-
+              <img
+                src="https://stylewithingrace.com/wp-content/uploads/elementor/thumbs/New-About-Page-Photo-2024-qids6gfvk1z8f2xb7tj04r4thwq0qcxwrfafs3japs.png"
+                alt="Amy Zanatta"
+              />
+              <div class="social-overlay">
+                <div class="social-icon globe"></div>
+              </div>
+            </a>
           </div>
-          <div class="team-member-name">Amy Zanatta</div>
-          <div class="team-member-role">Fashion Stylist</div>
+          <div class="team-member-info">
+            <div class="team-member-name">Amy Zanatta</div>
+            <div class="team-member-role">Fashion Stylist</div>
+          </div>
         </div>
       </div>
-
-      </div>
-     
     </section>
 
+    <!-- Pre-register Section -->
     <section class="pre-register scroll-animation">
-      <p>
-        Pre-register now and get exclusive early access, special discounts, and
-        a chance to become a featured model!
-      </p>
-      <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSe35ho0mOzNaf_xvf6YJJxFxu7l0sg6wA5V68YcCuSG6CAI8A/viewform"
-      >
-        <button class="register-btn">Your FeedBack</button>
-      </a>
+      <div class="pre-register-content">
+        <div class="section-tag">EARLY ACCESS</div>
+        <h2>Be Among The First</h2>
+        <p>
+          Pre-register now and get exclusive early access, special discounts, and
+          a chance to become a featured model on our platform!
+        </p>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSe35ho0mOzNaf_xvf6YJJxFxu7l0sg6wA5V68YcCuSG6CAI8A/viewform"
+          target="_blank"
+        >
+          <button class="register-btn">Share Your Feedback</button>
+        </a>
+      </div>
+      <div class="newsletter">
+        <h3>Stay Updated</h3>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Enter your email" class="email-input">
+          <button class="subscribe-btn">Subscribe</button>
+        </div>
+        <p class="newsletter-note">Join 10,000+ fashion enthusiasts getting weekly updates</p>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer scroll-animation">
-      <div class="footer-logo">
-        <img src="https://i.postimg.cc/CMnkxnGs/image-1.png" alt="Racan Logo" />
-      </div>
-      <div class="contact-info">
-        <h3>Contact Us:</h3>
+      <div class="footer-top">
+        <div class="footer-logo">
+          <img src="https://i.postimg.cc/CMnkxnGs/image-1.png" alt="Racan Logo" />
+        </div>
+        <div class="footer-columns">
+          <div class="footer-column">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Features</h3>
+            <ul>
+              <li><a href="#">Virtual Try-On</a></li>
+              <li><a href="#">AI Styling</a></li>
+              <li><a href="#">Wardrobe Assistant</a></li>
+              <li><a href="#">Fashion Challenges</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Contact Us</h3>
+            <ul>
+              <li><a href="mailto:info@racan.ai">info@racan.ai</a></li>
+              <li><a href="#">Support</a></li>
+              <li><a href="#">Partnerships</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="social-media">
         <h3>Follow Us on Social Media:</h3>
         <div class="social-icons">
-          <a href="https://www.linkedin.com/in/racan-ai-b82302278/" class="social-icon"
-            ><img
+          <a href="https://www.linkedin.com/in/racan-ai-b82302278/" class="social-icon" target="_blank">
+            <img
               src="https://i.postimg.cc/FsWk02tm/icons8-linkedin-144.png"
               alt="Linkedin"
-          /></a>
+            />
+          </a>
           <a
             href="https://bsky.app/profile/rucanai.bsky.social"
             class="social-icon"
-            ><img
+            target="_blank"
+          >
+            <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Bluesky_Logo.svg/2319px-Bluesky_Logo.svg.png"
-              alt="Butterfly"
-          /></a>
-          <a href="https://x.com/sigasis_" class="social-icon" id="twitter-icon"
-            ><img
+              alt="Bluesky"
+            />
+          </a>
+          <a href="https://x.com/sigasis_" class="social-icon" id="twitter-icon" target="_blank">
+            <img
               src="https://i.postimg.cc/2S2n6VGk/icons8-twitterx-50.png"
               alt="Twitter"
-          /></a>
+            />
+          </a>
           <a
             href="https://www.instagram.com/racan.ai?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             class="social-icon"
             id="instagram-icon"
-            ><img
+            target="_blank"
+          >
+            <img
               src="https://i.postimg.cc/MpqsCJcR/icons8-instagram-48.png"
               alt="Instagram"
-          /></a>
+            />
+          </a>
         </div>
       </div>
       <div class="footer-links">
@@ -861,149 +1832,15 @@
         <a href="#" class="footer-link">Privacy Policy</a>
         <a href="#" class="footer-link">Terms & Conditions</a>
       </div>
+      <div class="copyright">
+        <p>&copy; 2025 Racan AI. All rights reserved.</p>
+      </div>
     </footer>
 
     <!-- Go to Top Button -->
-    <button class="go-top-btn" id="goTopBtn"></button>
+    <button class="go-top-btn" id="goTopBtn" aria-label="Go to top"></button>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const featureCards = document.querySelectorAll(".feature-card");
-        featureCards.forEach((card) => {
-          card.addEventListener("mouseover", function () {
-            this.style.transform = "translateY(-10px)";
-            this.style.boxShadow = "0 15px 30px rgba(0,0,0,0.2)";
-            this.style.transition = "all 0.3s ease";
-          });
-
-          card.addEventListener("mouseout", function () {
-            this.style.transform = "translateY(0)";
-            this.style.boxShadow = "0 5px 15px rgba(0,0,0,0.1)";
-          });
-        });
-
-        // Add smooth scrolling for in-page navigation links only
-        const navLinks = document.querySelectorAll("nav a");
-        navLinks.forEach((link) => {
-          link.addEventListener("click", function (e) {
-            const targetId = this.getAttribute("href");
-            // Only intercept in-page links starting with "#"
-            if (targetId.startsWith("#")) {
-              e.preventDefault();
-              const targetElement = document.querySelector(targetId);
-              if (targetElement) {
-                window.scrollTo({
-                  top: targetElement.offsetTop - 70,
-                  behavior: "smooth",
-                });
-              }
-            }
-          });
-        });
-
-        const buttons = document.querySelectorAll(
-          "button, .join-now-btn, .register-btn"
-        );
-        buttons.forEach((button) => {
-          button.addEventListener("mouseover", function () {
-            this.style.transform = "scale(1.05)";
-            this.style.transition = "all 0.2s ease";
-          });
-
-          button.addEventListener("mouseout", function () {
-            this.style.transform = "scale(1)";
-          });
-        });
-
-        // Go to Top Button
-        const goTopBtn = document.getElementById("goTopBtn");
-        window.addEventListener("scroll", function () {
-          if (window.scrollY > 200) {
-            goTopBtn.classList.add("show");
-          } else {
-            goTopBtn.classList.remove("show");
-          }
-        });
-
-        goTopBtn.addEventListener("click", function () {
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          });
-        });
-
-        const scrollAnimations = document.querySelectorAll('.scroll-animation');
-
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-             if (entry.target.classList.contains('feature-card')) {
-                entry.target.style.animation = 'fadeInUp 0.8s forwards';
-              } else if (entry.target.classList.contains('step')) {
-                entry.target.style.animation = 'fadeInLeft 0.8s forwards';
-              } else if (entry.target.classList.contains('team-member')) {
-                entry.target.style.animation = 'fadeInUp 0.8s forwards';
-              } else if (entry.target.classList.contains('additional-features') || 
-                         entry.target.classList.contains('magazine-banner') ||
-                         entry.target.classList.contains('how-it-works') ||
-                         entry.target.classList.contains('team-section') ||
-                         entry.target.classList.contains('pre-register') ||
-                         entry.target.classList.contains('footer') ||
-                         entry.target.classList.contains('features-title')) {
-                entry.target.style.animation = 'fadeInUp 0.8s forwards';
-              } else if (entry.target.parentNode.classList.contains('additional-features') && 
-                         entry.target.tagName === 'LI') {
-                entry.target.style.animation = 'fadeInLeft 0.8s forwards';
-              
-                const index = Array.from(entry.target.parentNode.children).indexOf(entry.target);
-                entry.target.style.animationDelay = `${index * 0.2}s`;
-              } else if (entry.target.classList.contains('additional-img') || 
-                         entry.target.parentNode.classList.contains('additional-img')) {
-                entry.target.style.animation = 'fadeInRight 0.8s forwards';
-              } else {
-                entry.target.style.animation = 'fadeIn 0.8s forwards';
-              }
-              
-              // Stop observing after animation is applied
-              observer.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 0.1, 
-          rootMargin: '-50px' 
-        });
-        
-        // Observe all elements with scroll-animation class
-        scrollAnimations.forEach(element => {
-          observer.observe(element);
-        });
-        
-const animateElements = document.querySelectorAll('.animate-3d');
-animateElements.forEach((element) => {
-  element.addEventListener('mousemove', function(e) {
-    const { left, top, width, height } = this.getBoundingClientRect();
-    const x = (e.clientX - left) / width - 0.5;
-    const y = (e.clientY - top) / height - 0.5;
-
-    const rotateX = y * -20;
-    const rotateY = x * 20;
-    
-    // Apply transform
-    this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    this.style.transition = 'transform 0.1s ease';
-    
-    // Add subtle shadow for depth
-    this.style.boxShadow = `${x * 10}px ${y * 10}px 20px rgba(0,0,0,0.15)`;
-  });
-  
-  element.addEventListener('mouseleave', function() {
-    // Reset transform and shadow when mouse leaves
-    this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
-    this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
-    this.style.transition = 'transform 0.5s ease, box-shadow 0.5s ease';
-  });
-});
-      });
-    </script>
+    <!-- Scripts -->
+    <script src="script.js"></script>
   </body>
 </html>
