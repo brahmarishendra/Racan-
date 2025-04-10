@@ -20,7 +20,7 @@
     <script type="module" src="Racan.js"></script>
    
     <style>
-      :root {
+:root {
   --primary-color: #6c63ff;
   --secondary-color: #ff6b6b;
   --accent-color: #00d9ff;
@@ -170,7 +170,6 @@ button {
 .join-now-btn {
   background: var(--gradient-1);
   color: white;
-  border: none;
   border-radius: var(--border-radius-xl);
   padding: 10px 24px;
   font-weight: 600;
@@ -284,7 +283,6 @@ button {
   align-items: center;
   background: var(--gradient-1);
   color: white;
-  border: none;
   border-radius: var(--border-radius-xl);
   padding: 12px 24px;
   font-weight: 600;
@@ -419,7 +417,6 @@ button {
 }
 
 .features {
-  
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -676,7 +673,6 @@ button {
 .explore-btn {
   background-color: var(--secondary-color);
   color: white;
-  border: none;
   border-radius: var(--border-radius-xl);
   padding: 12px 32px;
   font-weight: 600;
@@ -757,7 +753,6 @@ button {
 .get-started-btn {
   background: var(--gradient-1);
   color: white;
-  border: none;
   border-radius: var(--border-radius-xl);
   padding: 14px 32px;
   font-size: 1.1rem;
@@ -854,7 +849,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
+  gap: 2px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -982,7 +977,6 @@ button {
 .register-btn {
   background-color: white;
   color: var(--secondary-color);
-  border: none;
   border-radius: var(--border-radius-xl);
   padding: 12px 32px;
   font-weight: 600;
@@ -1241,15 +1235,15 @@ button {
   .hero-text h1 {
     font-size: 2.8rem;
   }
-  
+
   .section-title {
     font-size: 2.2rem;
   }
-  
+
   .magazine-overlay h2 {
     font-size: 2.5rem;
   }
-  
+
   .pre-register-content h2 {
     font-size: 2.2rem;
   }
@@ -1259,40 +1253,40 @@ button {
   .nav-links {
     display: none;
   }
-  
+
   .hero-text h1 {
     font-size: 2.3rem;
   }
-  
+
   .hero-buttons {
     flex-direction: column;
     gap: 16px;
   }
-  
+
   .hero-stats {
     justify-content: space-between;
   }
-  
+
   .magazine-overlay h2 {
     font-size: 2rem;
   }
-  
+
   .magazine-overlay p {
     font-size: 1rem;
   }
-  
+
   .how-it-works-steps {
     gap: 40px;
   }
-  
+
   .step-connector {
     height: 40px;
   }
-  
+
   .team-member {
     min-width: 160px;
   }
-  
+
   .team-member-img {
     width: 140px;
     height: 140px;
@@ -1303,57 +1297,56 @@ button {
   .hero-text h1 {
     font-size: 2rem;
   }
-  
+
   .hero-stats {
     flex-direction: column;
     gap: 16px;
   }
-  
+
   .stat {
     flex-direction: row;
     align-items: center;
     gap: 10px;
   }
-  
+
   .section-title {
     font-size: 1.8rem;
   }
-  
+
   .magazine-overlay {
     align-items: center;
     text-align: center;
     padding: 0 5%;
   }
-  
+
   .magazine-overlay h2 {
     font-size: 1.8rem;
   }
-  
+
   .step {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .step-number {
     margin-bottom: 16px;
   }
-  
+
   .newsletter-form {
     flex-direction: column;
   }
-  
+
   .email-input {
     border-radius: var(--border-radius-xl);
     margin-bottom: 10px;
   }
-  
+
   .subscribe-btn {
     border-radius: var(--border-radius-xl);
     width: 100%;
     padding: 12px;
   }
-
-  /* Add these landscape-specific media queries to fix horizontal mobile layout */
+}
 
 /* Landscape orientation for mobile devices */
 @media (max-height: 500px) and (orientation: landscape) {
@@ -1361,174 +1354,174 @@ button {
   .navbar {
     padding: 8px 5%;
   }
-  
+
   .logo img {
     height: 28px;
   }
-  
+
   /* Hero section adjustments */
   .hero-container {
-    padding: 80px 0 40px;
+    padding: 60px 0 30px;
   }
-  
+
   .hero {
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     gap: 20px;
   }
-  
+
   .hero-text h1 {
     font-size: 1.8rem;
     margin-bottom: 10px;
   }
-  
+
   .hero-text p {
     font-size: 0.9rem;
     margin-bottom: 15px;
   }
-  
+
   .hero-buttons {
-    flex-direction: row;
+    flex-direction: column;
     margin-bottom: 15px;
   }
-  
+
   .signup-btn, .demo-btn {
     padding: 8px 16px;
     font-size: 0.9rem;
   }
-  
+
   /* Features section */
   .features-section {
-    padding: 50px 5%;
+    padding: 30px 5%;
   }
-  
+
   .section-header {
-    margin-bottom: 30px;
-  }
-  
-  .section-title {
-    font-size: 1.8rem;
-  }
-  
-  .feature-card {
-    min-width: 240px;
-  }
-  
-  .feature-img {
-    height: 150px;
-  }
-  
-  /* Additional features section */
-  .additional-features {
-    padding: 40px 5%;
-    flex-direction: row;
-  }
-  
-  .additional-features-content h2 {
-    font-size: 1.8rem;
     margin-bottom: 20px;
   }
-  
-  .feature-item {
-    margin-bottom: 15px;
-    padding: 10px;
+
+  .section-title {
+    font-size: 1.6rem;
   }
-  
+
+  .feature-card {
+    min-width: 200px;
+  }
+
+  .feature-img {
+    height: 120px;
+  }
+
+  /* Additional features section */
+  .additional-features {
+    padding: 30px 5%;
+    flex-direction: column;
+  }
+
+  .additional-features-content h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+
+  .feature-item {
+    margin-bottom: 10px;
+    padding: 8px;
+  }
+
   /* Magazine banner */
   .magazine-banner {
-    height: 250px;
+    height: 200px;
   }
-  
+
   .magazine-overlay h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
-  
+
   /* How it works section */
   .how-it-works {
-    padding: 50px 5%;
+    padding: 30px 5%;
   }
-  
+
   .step {
-    padding: 15px;
+    padding: 10px;
   }
-  
+
   /* Testimonials */
   .testimonials {
-    padding: 50px 5%;
+    padding: 30px 5%;
   }
-  
+
   .testimonial {
-    min-width: 240px;
-    padding: 20px;
+    min-width: 200px;
+    padding: 15px;
   }
-  
+
   /* Team section */
   .team-section {
-    padding: 50px 5%;
+    padding: 30px 5%;
   }
-  
+
   .team-members {
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
   }
-  
+
   .team-member {
-    min-width: 150px;
-    max-width: 180px;
+    min-width: 140px;
+    max-width: 160px;
   }
-  
+
   .team-member-img {
     width: 100px;
     height: 100px;
   }
-  
+
   /* Pre-register section */
   .pre-register {
-    padding: 40px 5%;
-    flex-direction: row;
+    padding: 30px 5%;
+    flex-direction: column;
   }
-  
+
   .pre-register-content h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
-  
+
   .newsletter {
-    padding: 20px;
+    padding: 15px;
   }
-  
+
   /* Footer */
   .footer {
-    padding: 50px 5% 20px;
+    padding: 30px 5% 20px;
   }
-  
+
   /* Additional tweaks for extreme landscape (very short height) */
   @media (max-height: 400px) {
     .hero-container {
-      padding: 60px 0 30px;
+      padding: 40px 0 20px;
     }
-    
+
     .hero-text h1 {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
     }
-    
+
     .hero-stats {
       display: none;
     }
-    
+
     .feature-card {
-      min-width: 200px;
+      min-width: 180px;
     }
-    
+
     .magazine-banner {
-      height: 200px;
+      height: 180px;
     }
-    
+
     .how-it-works-steps {
-      gap: 10px;
+      gap: 8px;
     }
-    
+
     .step-connector {
-      height: 15px;
+      height: 10px;
     }
   }
 }
@@ -1538,15 +1531,15 @@ button {
   .hero {
     align-items: center;
   }
-  
+
   .feature-card {
-    min-width: 220px;
+    min-width: 200px;
   }
-  
+
   .features {
     justify-content: space-around;
   }
-  
+
   .team-members {
     justify-content: space-around;
   }
@@ -1564,17 +1557,17 @@ img {
 }
 
 /* Flexible containers for better adaptation */
-.hero, 
-.features, 
-.testimonial-container, 
-.team-members, 
+.hero,
+.features,
+.testimonial-container,
+.team-members,
 .how-it-works-steps {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
-}
+
     </style>
   </head>
 
