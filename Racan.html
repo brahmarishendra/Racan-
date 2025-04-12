@@ -135,6 +135,11 @@ button {
 
 .logo img {
   height: 35px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+  transform: scale(1.05);
 }
 
 .nav-links {
@@ -177,11 +182,29 @@ button {
   cursor: pointer;
   transition: var(--transition);
   box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
 }
 
 .join-now-btn:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
+}
+
+.join-now-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+}
+
+.join-now-btn:hover::after {
+  left: 100%;
 }
 
 /* Hero Section */
@@ -442,6 +465,24 @@ button {
   box-shadow: var(--shadow-lg);
 }
 
+.feature-card.animate {
+  animation: cardPop 0.6s forwards;
+}
+
+@keyframes cardPop {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 .feature-img {
   height: 220px;
   overflow: hidden;
@@ -677,12 +718,31 @@ button {
   padding: 12px 32px;
   font-weight: 600;
   transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .explore-btn:hover {
   background-color: #ff5252;
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
+}
+
+.explore-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+
+.explore-btn:hover::after {
+  left: 100%;
 }
 
 /* How It Works Section */
@@ -707,6 +767,23 @@ button {
   padding: 24px;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.step.animate {
+  animation: slideInLeft 0.6s forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .step:hover {
@@ -759,6 +836,8 @@ button {
   font-weight: 600;
   margin-bottom: 16px;
   transition: var(--transition);
+  position: relative;
+  overflow: hidden;
 }
 
 .get-started-btn:hover {
@@ -766,10 +845,31 @@ button {
   box-shadow: var(--shadow-md);
 }
 
+.get-started-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+}
+
+.get-started-btn:hover::after {
+  left: 100%;
+}
+
 .learn-more-link {
   color: var(--primary-color);
   font-weight: 500;
   text-decoration: underline;
+  transition: var(--transition);
+}
+
+.learn-more-link:hover {
+  color: var(--secondary-color);
 }
 
 /* Testimonials Section */
@@ -796,6 +896,23 @@ button {
   padding: 30px;
   box-shadow: var(--shadow-md);
   transition: var(--transition);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.testimonial.animate {
+  animation: fadeInUp 0.6s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .testimonial:hover {
@@ -827,6 +944,11 @@ button {
   border-radius: 50%;
   object-fit: cover;
   margin-right: 16px;
+  transition: transform 0.3s ease;
+}
+
+.testimonial:hover .author-img {
+  transform: scale(1.1);
 }
 
 .author-name {
@@ -859,6 +981,12 @@ button {
   min-width: 220px;
   max-width: 260px;
   text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.team-member.animate {
+  animation: fadeInUp 0.6s forwards;
 }
 
 .team-member-img {
@@ -981,6 +1109,8 @@ button {
   padding: 12px 32px;
   font-weight: 600;
   transition: var(--transition);
+  position: relative;
+  overflow: hidden;
 }
 
 .register-btn:hover {
@@ -988,6 +1118,22 @@ button {
   box-shadow: var(--shadow-md);
   background-color: var(--dark-color);
   color: white;
+}
+
+.register-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+}
+
+.register-btn:hover::after {
+  left: 100%;
 }
 
 .newsletter {
@@ -1601,16 +1747,15 @@ body.no-scroll {
 
     <!-- Mobile Navigation -->
     <div class="mobile-nav">
+      <div class="close-menu"></div>
       <div class="mobile-nav-links">
         <a href="#features" class="mobile-nav-link">Features</a>
         <a href="#how-it-works" class="mobile-nav-link">How It Works</a>
         <a href="#team" class="mobile-nav-link">Team</a>
       </div>
-      <div class="mobile-nav-buttons">
-        <a href="https://racan.vercel.app/Subscribe.html" class="join-now-btn">
-          Subscribe
-        </a>
-      </div>
+      <a href="https://racan.vercel.app/Subscribe.html" class="mobile-nav-subscribe">
+        Subscribe
+      </a>
     </div>
 
     <!-- Overlay for mobile menu -->
