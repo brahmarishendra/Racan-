@@ -18,6 +18,7 @@
 
     
     <script type="module" src="Racan.js"></script>
+    <link rel="stylesheet" href="mobile-menu.css">
    
     <style>
 :root {
@@ -1567,6 +1568,11 @@ img {
   align-items: center;
 }
 
+/* Add this to your existing styles */
+body.no-scroll {
+  overflow: hidden;
+}
+
     </style>
   </head>
 
@@ -1586,7 +1592,29 @@ img {
       <a href="https://racan.vercel.app/Subscribe.html" class="join-now-btn">
         Subscribe
       </a>
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+      <div class="mobile-nav-links">
+        <a href="#features" class="mobile-nav-link">Features</a>
+        <a href="#how-it-works" class="mobile-nav-link">How It Works</a>
+        <a href="#team" class="mobile-nav-link">Team</a>
+      </div>
+      <div class="mobile-nav-buttons">
+        <a href="https://racan.vercel.app/Subscribe.html" class="join-now-btn">
+          Subscribe
+        </a>
+      </div>
+    </div>
+
+    <!-- Overlay for mobile menu -->
+    <div class="overlay"></div>
 
     <!-- Hero Section -->
     <section class="hero-container">
@@ -2063,7 +2091,6 @@ img {
 
     <!-- Scripts -->
     <script src="Racan.js"></script>
+    <script src="mobile-menu.js"></script>
   </body>
 </html>
-
-    <style>
