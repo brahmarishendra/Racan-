@@ -2,6 +2,9 @@
 Racan a full-fledged AI fashion ecosystem!
 Experience the future of fashion with AI-powered assistant + Fashion Ecommerce , personalized recommendations that match your unique taste.
 
+![Uploading image.png…]()
+
+
 Register with https://racan.vercel.app
 
 Racan – AI Fashion Advisor Platform  
