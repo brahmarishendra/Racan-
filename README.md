@@ -21,3 +21,5 @@ You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 Contact: Brahmrishi868@gmail.com
+
+Racan © 2025 by Kesari brahmarishendra is licensed under Creative Commons Attribution-NoDerivatives 4.0 International 
