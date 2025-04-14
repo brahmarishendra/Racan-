@@ -163,6 +163,7 @@
         cursor: pointer;
         transition: transform 0.3s ease;
     }
+
     .hero-link {
         text-decoration: none;
         display: block;
@@ -797,8 +798,6 @@
             margin-right: 1rem;
             margin-left: 1rem;
         }
-
-        }
         
         .hero-section {
             height: 350px;
@@ -854,7 +853,6 @@
         .modal-article-image {
             height: 250px;
         }
-    }
 
     @media (max-width: 576px) {
         main {
@@ -903,3 +901,4 @@
             width: 100%;
         }
     }
+}
