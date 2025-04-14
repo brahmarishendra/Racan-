@@ -15,6 +15,7 @@ const closeModal = document.querySelector('.close-modal');
 const navLinks = document.querySelectorAll('nav ul li a');
 const filterBtns = document.querySelectorAll('.filter-btn');
 const newsletterForm = document.getElementById('newsletter-form');
+const 
 
 // State variables
 let currentPage = 1;
@@ -421,7 +422,7 @@ function determineArticleCategory(article) {
         'makeup', 'accessory', 'accessories', 'collection', 'apparel', 'dress', 'wardrobe'];
     if (fashionKeywords.some(keyword => fullText.includes(keyword))) {
         return 'Fashion';
-    }
+    }   
     
     // Check for e-commerce keywords
     const ecommerceKeywords = ['e-commerce', 'online shop', 'fashion retail', 'shopping', 'Amazon', 'eBay', 'fashion store', 'sustainable fashion', 'direct-to-consumer',
@@ -681,4 +682,6 @@ function filterArticles(filter) {
             }
         });
     }
+
+
 }
