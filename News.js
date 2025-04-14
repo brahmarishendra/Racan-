@@ -1,10 +1,6 @@
 // API Key and Base URL
 const API_KEY = '312ade627b28432bb9903380b86f7bc0';
 const BASE_URL = 'https://newsapi.org/v2';
-const proxyUrl = 'https://racan.vercel.app/News.html';
-const response = await fetch(`${proxyUrl}${BASE_URL}/everything?...`);
-
-
 
 // DOM Elements
 const featuredContainer = document.getElementById('featured-container');
@@ -688,3 +684,8 @@ function filterArticles(filter) {
 
 
 }
+
+const BACKEND_URL = 'https://your-backend.onrender.com/api/news';
+
+const response = await fetch(`${BACKEND_URL}?q=${currentQuery || currentCategory}&page=${currentPage}`);
+const data = await response.json();
