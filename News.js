@@ -685,7 +685,7 @@ function filterArticles(filter) {
 
 }
 
-const BACKEND_URL = 'https://your-backend.onrender.com/api/news';
+const BACKEND_URL = 'https://racan.vercel.app/News.html';
 
 const response = await fetch(`${BACKEND_URL}?q=${currentQuery || currentCategory}&page=${currentPage}`);
 const data = await response.json();
