@@ -793,7 +793,9 @@
         }
         
         .search-container {
-            width: 300px;
+            width: 250px;
+            margin-right: 1rem;
+            margin-left: 1rem;
         }
 
         }
