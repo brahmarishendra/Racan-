@@ -15,7 +15,6 @@ const closeModal = document.querySelector('.close-modal');
 const navLinks = document.querySelectorAll('nav ul li a');
 const filterBtns = document.querySelectorAll('.filter-btn');
 const newsletterForm = document.getElementById('newsletter-form');
-const 
 
 // State variables
 let currentPage = 1;
