@@ -1,6 +1,10 @@
 // API Key and Base URL
 const API_KEY = '312ade627b28432bb9903380b86f7bc0';
 const BASE_URL = 'https://newsapi.org/v2';
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+const response = await fetch(`${proxyUrl}${BASE_URL}/everything?...`);
+
+
 
 // DOM Elements
 const featuredContainer = document.getElementById('featured-container');
