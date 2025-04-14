@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racan News</title>
+    <link
+    rel="shortcut icon"
+    href="https://i.postimg.cc/50B939gH/Logo.png"
+    type="image/x-icon"
+  />    
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="News.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <h1>Racan X WWD</h1>
+        </div>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for news...">
+            <button id="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <a href="https://www2.hm.com/en_in/women/shop-by-product/view-all.html" class="hero-link" target="_blank">
+        <section class="hero-section">
+
+            </div>
+        </section>
+        </a>
+
+        <section class="featured-section">
+            <h2>Featured Stories</h2>
+            <div class="featured-container" id="featured-container">
+                <!-- Featured articles will be loaded here -->
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading featured stories...</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="news-section">
+            <div class="section-header">
+                <h2>Latest News</h2>
+                <div class="filter-container">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="fashion">Fashion</button>
+                    <button class="filter-btn" data-filter="beauty">Beauty</button>
+                    <button class="filter-btn" data-filter="skincare">Skincare</button>
+                </div>
+            </div>
+            <div class="news-container" id="news-container">
+                <!-- News articles will be loaded here -->
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading news...</p>
+                </div>
+            </div>
+            <button id="load-more" class="load-more-btn">Load More</button>
+        </section>
+
+        <section class="trending-section">
+            <h2>Trending Topics</h2>
+            <div class="trending-tags">
+                <span class="tag">#SummerFashion</span>
+                <span class="tag">#Brands</span>
+                <span class="tag">#Beauty</span>
+                <span class="tag">#SustainableFashion</span>
+                <span class="tag">#FashionWeek</span>
+            </div>
+        </section>
+
+        <section class="newsletter-section">
+            <div class="newsletter-content">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get the latest fashion and beauty news delivered to your inbox</p>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+  
+    <aside class="saved-articles">       
+        <div class="saved-articles-header">
+            <h3>Saved Articles</h3>
+            <button class="close-saved-btn">&times;</button>
+        </div>
+        <div id="saved-articles-container">
+            <p class="empty-message">No saved articles yet</p>
+        </div>
+    </aside>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="https://racan.vercel.app/">
+                <img src="https://i.postimg.cc/CMnkxnGs/image-1.png" alt="Racan Fashion Logo" class="logo">
+            </a>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Beauty</a></li>
+                    <li><a href="#">Skincare</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Newsletter</h3>
+                <p>Subscribe to get the latest updates</p>
+                <form>
+                    <input type="email" placeholder="Your email">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Racan Fashion. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Article Modal -->
+    <div id="article-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-content-container"></div>
+        </div>
+    </div>
+
+    <script src="News.js">
+        
+    </script>
+</body>
+</html>
